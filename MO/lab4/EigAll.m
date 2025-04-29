@@ -1,4 +1,3 @@
-% TODO : fix it
 function [V, L] = EigAll(A, m, e, k)
   n = size(A, 2);
   m = min(m, n);
@@ -10,9 +9,9 @@ function [V, L] = EigAll(A, m, e, k)
       endfor
     endfor
     v = v / norm(v);
-    y = A * v;
-    l = y' * v;
-    v = y / norm(y);
+    z = A * v;
+    l = z' * v;
+    v = z / norm(z);
 
     if norm(A*v - v*l) < e
       break
