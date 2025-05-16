@@ -5,13 +5,13 @@ function [v,l] = Deflacja (A, w, e, k)
   v = v - w * (v' * w);
   v = v / norm(v);
   for i=1:k
-      y = A * v;
-      y = y - w * (v' * w);
-      l = y' * v;
-      v = y / norm(y);
+    y = A * v;
+    y = y - w * (v' * w);
+    l = y' * v;
+    v = y / norm(y);
 
-      if norm(A*v - v*l) < e
-          break
-      end
+    if norm(A*v - v*l) < e
+      break
+    end
   end
 end
